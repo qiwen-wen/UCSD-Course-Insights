@@ -48,4 +48,3 @@ Instructor quality dominates student course satisfaction across all STEM departm
 ## 📌 Acknowledgements
 
 - Data provided by [UCSD Historical Enrollment Data](https://github.com/UCSD-Historical-Enrollment-Data)
-- Project completed as part of **COGS 108: Data Science in Practice** at UC San Diego (Winter 2025)
