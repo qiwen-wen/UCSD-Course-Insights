@@ -13,30 +13,8 @@
 ## 📦 Dataset
 
 - **Source:** [UCSD Historical Enrollment Data — CAPEs.tsv](https://github.com/UCSD-Historical-Enrollment-Data/UCSDHistEnrollData/blob/master/data/CAPEs.tsv)
-- **Scope:** UCSD STEM courses from 2020–2022 academic years
-- **Size:** 61,791 course-section observations across 14 STEM departments
-- **Key Variables:**
-  - `rcmd_class` — % of students who recommend the course
-  - `rcmd_instr` — % of students who recommend the instructor
-  - `study_hr_wk` — Average weekly study hours reported
-  - `avg_grade_exp` / `avg_grade_rec` — Expected vs. received GPA
-  - `enroll` — Course enrollment size
-
-> ⚠️ The raw data file is not included in this repo due to size. Download it from the link above and place it in the `data/` folder as `CAPEs.tsv`.
-
----
-
-## 📁 Project Structure
-
-```
-UCSD-Course-Insights/
-├── data/                    # Data folder (see Dataset section above)
-├── FinalProject.ipynb       # Full analysis and findings
-├── EDA_Checkpoint.ipynb     # Exploratory data analysis checkpoint
-├── Data_Checkpoint.ipynb    # Data wrangling checkpoint
-├── Project_Proposal.ipynb   # Original project proposal
-└── README.md
-```
+- **Scope:** 61,791 course-section observations across 14 UCSD STEM departments (2020–2022)
+- **Key Variables:** instructor & class recommendation rates, weekly study hours, expected vs. received GPA, enrollment size
 
 ---
 
@@ -54,48 +32,16 @@ UCSD-Course-Insights/
 
 ## 📈 Key Findings
 
-### 1. 👩‍🏫 Instructor Quality is the #1 Driver
-- **Pearson correlation of 0.79** between instructor recommendation and class recommendation
-- Consistent across all 14 STEM departments (Spearman ρ ranging from 0.575–0.841)
-- Instructor perception is by far the strongest predictor of whether students recommend a course
-
-### 2. 📚 Higher Workload = Lower Satisfaction
-- OLS regression found a **weak but statistically significant negative relationship** (R² = 0.051)
-- Each additional study hour per week is associated with a **~1.3% decrease** in recommendation rate
-- Chi-Square test confirmed workload category significantly impacts recommendation outcome (p < 0.001)
-
-### 3. 📝 Grade Expectations Matter
-- Students whose grades **met or exceeded expectations** showed higher recommendation rates (87.16% vs. 83.39%)
-- Independent t-test confirmed this difference is statistically significant
-
-### 4. 🏫 Smaller Classes Tend to Score Higher
-- Small classes (20–94 students) averaged slightly higher recommendation rates than large classes (95–1,101 students)
-- Weak negative correlation of **-0.074** — enrollment size alone explains only ~0.5% of variance
-- Effect is real but modest; instructor quality dominates
-
----
-
-## 🚀 How to Run
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/qiwen-wen/UCSD-Course-Insights.git
-cd UCSD-Course-Insights
-
-# 2. Install dependencies
-pip install pandas numpy matplotlib seaborn statsmodels scipy patsy
-
-# 3. Download the dataset and place it in data/CAPEs.tsv
-
-# 4. Open the notebook
-jupyter notebook FinalProject.ipynb
-```
+- **Instructor quality** is the #1 driver — Pearson correlation of **0.79** between instructor and class recommendation rates, consistent across all departments
+- **Higher workload** slightly lowers satisfaction — each additional study hour/week corresponds to a **~1.3% drop** in recommendation rate (R² = 0.051)
+- **Grade expectations** matter — students whose grades met or exceeded expectations recommended at **87.16% vs. 83.39%**
+- **Smaller classes** (20–94 students) score slightly higher than large ones (95–1,101), though class size alone explains only **0.5% of variance**
 
 ---
 
 ## 💡 Conclusions
 
-Instructor quality emerged as the dominant factor in student course satisfaction, with a strong positive correlation across all STEM departments. While workload and grade expectations have measurable effects, they contribute far less to the overall recommendation rate. Class size shows a weak negative effect — smaller classes tend to perform better, though it is not a strong standalone predictor. These findings offer practical guidance for both students choosing courses and institutions looking to improve teaching effectiveness.
+Instructor quality dominates student course satisfaction across all STEM departments. Workload, grade expectations, and class size all have measurable but secondary effects. Findings offer practical guidance for students choosing courses and institutions improving teaching effectiveness.
 
 ---
 
